@@ -34,3 +34,14 @@ C:\Users\ropze\Desktop\maalitaululaskuri-master\Maalitaululaskuri\obj\Debug\Maal
 C:\Users\ropze\Desktop\maalitaululaskuri-master\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.Form1.resources
 C:\Users\ropze\Desktop\maalitaululaskuri-master\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.Properties.Resources.resources
 C:\Users\ropze\Desktop\maalitaululaskuri-master\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.csproj.GenerateResource.Cache
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\bin\Debug\Maalitaululaskuri.exe.config
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.exe
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.pdb
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\bin\Debug\Maalitaululaskuri.exe
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\bin\Debug\Maalitaululaskuri.pdb
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\bin\Debug\AForge.Video.dll
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.csprojResolveAssemblyReference.cache
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.Form1.resources
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.Properties.Resources.resources
+C:\Users\ropze\Desktop\Maalitaululaskuri\Maalitaululaskuriv3\Maalitaululaskuri\obj\Debug\Maalitaululaskuri.csproj.GenerateResource.Cache

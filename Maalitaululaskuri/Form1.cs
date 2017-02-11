@@ -16,6 +16,7 @@ namespace Maalitaululaskuri
 {
     public partial class Form1 : Form
     {
+        bool laskettu=true;
         int pistetarkkuus = 0;
         int kuvatarkkuus = 0;
         int keskipiste = 0;
@@ -45,7 +46,9 @@ namespace Maalitaululaskuri
             {
                 comboBox1.Items.Add(Device.Name);
             }
-
+            label1.Text = "KESKIOSUMAT: ";
+            label3.Text = "KAKKOSRIVIN OSUMAT: ";
+            label4.Text = "KOLMOSRIVIN OSUMAT: ";
 
 
             comboBox1.SelectedIndex = 0;
@@ -72,6 +75,10 @@ namespace Maalitaululaskuri
             {
                 y= (Bitmap)pictureBox1.Image.Clone();
             }
+            laskettu = true;
+            keskipiste = 0;
+            toinen = 0;
+            kolmas = 0;
              
 
         }
@@ -198,27 +205,44 @@ namespace Maalitaululaskuri
             if (keskipiste > pistetarkkuus)
             {
                 tulosmax = tulosmax + 1;
-                label1.Text = "EKA: "+tulosmax.ToString();
+                label1.Text = "KESKIOSUMAT: " + tulosmax.ToString();
             }
             if (toinen > pistetarkkuus)
             {
                tulostoinen = tulostoinen + 1;
-                label3.Text = "TOINEN: "+tulostoinen.ToString();
+                label3.Text = "KAKKOSRIVIN OSUMAT: " + tulostoinen.ToString();
             }
             if (kolmas > pistetarkkuus)
             {
                 tuloskolmas = tuloskolmas + 1;
-                label4.Text = "KOLMAS: " + tulostoinen.ToString();
+                label4.Text = "KOLMOSRIVIN OSUMAT: " + tulostoinen.ToString();
             }
             return bmp3;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            kuvatarkkuus = int.Parse(textBox2.Text);
-            pistetarkkuus = int.Parse(textBox1.Text);
-            Bitmap diff= getDifferencBitmap(x, y, color);
-            pictureBox2.Image = diff;
+            if (y!= null)
+            {
+                if (laskettu == true)
+                {
+                    kuvatarkkuus = int.Parse(textBox2.Text);
+                    pistetarkkuus = int.Parse(textBox1.Text);
+                    Bitmap diff = getDifferencBitmap(x, y, color);
+                    pictureBox2.Image = diff;
+                    laskettu = false;
+                }
+                else
+                {
+                    MessageBox.Show("Ota uusi kuva ennen seuraavaa vertausta!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ota ensin kuva tyhjästä taulusta ja laukauksen jälkeen toinen jonka jälkeen paina vertaa!");
+            }
+            
+           
         }
         private void pisteet(int x, int y, int leveys, int korkeus)
         {
@@ -230,32 +254,34 @@ namespace Maalitaululaskuri
                     keskipiste++;
                 }
             }
-
             if (x > leveys + gap && x < leveys + gap*2 || x > leveys - gap * 2  && x < leveys - gap)
-            {
-               
+            {               
                   if (y > korkeus + gap && y < korkeus + gap * 2 || y > korkeus - gap * 2  && y < korkeus - gap)
                   {
                     toinen++;
-                  }
-               
+                  }               
             }
             if (x > leveys + gap*2 && x < leveys + gap * 4 || x > leveys - gap *4 && x < leveys - gap*2)
             {
-
                 if (y > korkeus + gap*2 && y < korkeus + gap * 4 || y > korkeus - gap * 4 && y < korkeus - gap*2)
                 {
                     kolmas++;
                 }
-
             }
-
 
         }
         private void button3_Click(object sender, EventArgs e)
         {
             x = null;
             y = null;
+            tuloskolmas = 0;
+            tulosmax = 0;
+            tulostoinen = 0;
+            label1.Text = "KESKIOSUMAT:";
+
+            label3.Text = "KAKKOSRIVIN OSUMAT:";
+            label4.Text = "KOLMOSRIVIN OSUMAT:";
+            
         }
         private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
