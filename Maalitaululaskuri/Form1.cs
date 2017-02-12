@@ -286,6 +286,7 @@ namespace Maalitaululaskuri
         private void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             FinalFrame.Stop();
+            Application.Exit();
         }
 
 
