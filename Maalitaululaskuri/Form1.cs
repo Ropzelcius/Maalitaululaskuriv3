@@ -17,14 +17,14 @@ namespace Maalitaululaskuri
     public partial class Form1 : Form
     {
         bool laskettu=true;
-        int pistetarkkuus = 0;
-        int kuvatarkkuus = 0;
-        int keskipiste = 0;
-        int toinen = 0;
-        int kolmas = 0;
-        int tulosmax=0;
-        int tulostoinen = 0;
-        int tuloskolmas = 0;
+        double pistetarkkuus = 0;
+        double kuvatarkkuus = 0;
+        double keskipiste = 0;
+        double toinen = 0;
+        double kolmas = 0;
+        double tulosmax=0;
+        double tulostoinen = 0;
+        double tuloskolmas = 0;
         private FilterInfoCollection CaptureDevice; 
         private VideoCaptureDevice FinalFrame;
         Bitmap x;
@@ -61,7 +61,6 @@ namespace Maalitaululaskuri
             try
             {
                 comboBox1.SelectedIndex = 0;
-                FinalFrame = new VideoCaptureDevice();
                 FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
                 FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
                 FinalFrame.Start();
