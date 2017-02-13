@@ -41,21 +41,38 @@ namespace Maalitaululaskuri
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach (FilterInfo Device in CaptureDevice)
+            try
             {
-                comboBox1.Items.Add(Device.Name);
+                CaptureDevice = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+                foreach (FilterInfo Device in CaptureDevice)
+                {
+                    comboBox1.Items.Add(Device.Name);
+                }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Ei kameroita kytketty");
+            }
+            
             label1.Text = "KESKIOSUMAT: ";
             label3.Text = "KAKKOSRIVIN OSUMAT: ";
             label4.Text = "KOLMOSRIVIN OSUMAT: ";
+            try
+            {
+                comboBox1.SelectedIndex = 0;
+                FinalFrame = new VideoCaptureDevice();
+                FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
+                FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
+                FinalFrame.Start();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ei kameroita kytketty");
 
+            }
 
-            comboBox1.SelectedIndex = 0;
-            FinalFrame = new VideoCaptureDevice();
-            FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
-            FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
-            FinalFrame.Start();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
