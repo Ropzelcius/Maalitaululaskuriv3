@@ -62,6 +62,7 @@ namespace Maalitaululaskuri
             {
                 comboBox1.SelectedIndex = 0;
                 FinalFrame = new VideoCaptureDevice(CaptureDevice[comboBox1.SelectedIndex].MonikerString);
+                FinalFrame.VideoResolution = FinalFrame.VideoCapabilities[0];
                 FinalFrame.NewFrame += new NewFrameEventHandler(FinalFrame_NewFrame);
                 FinalFrame.Start();
             }
